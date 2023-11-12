@@ -32,4 +32,10 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
 # e-commerce_nextjs
+
+#### Create database ####
+In this case google mongo Db and create an account and create a database.
+Then you need to do the followin gon the comand promp npx prisma init
+Then  you go back to connect the database to the project and subtituing the url in the .env file.Then replace the password for the Atlas password
