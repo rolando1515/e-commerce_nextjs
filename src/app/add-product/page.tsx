@@ -1,14 +1,37 @@
+import prisma from "@/lib/db/prisma";
+import { redirect } from "next/navigation";
+
 export const metadata = {
 title:" Add product - Flowmazon"
 }
 
+async function addProduct(formData: FormData) {
+ "use server";
+const name = formData.get("name")?.toString ();
+const description = formData.get("description")?.toString ();
+const imageUrl = formData.get("imageUrl")?.toString ();
+const price = Number(formData.get("price")|| 0);
+
+if(!name || !description || !imageUrl || !price) {
+  throw Error("Missing fields");
+}
+
+
+ await prisma.products.create({ 
+    data: {name, description, imageUrl, price },
+
+     });
+    
+
+     redirect("/");
+}
 
 
 export default function AddProductPage() {
   return (
     <div>
       <h1 className="mb-3 text-lg font-bold">Add Product Page</h1>
-      <form>
+      <form action={addProduct}>
         <input
           required
           name="name"
