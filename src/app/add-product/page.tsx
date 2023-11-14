@@ -1,3 +1,9 @@
+export const metadata = {
+title:" Add product - Flowmazon"
+}
+
+
+
 export default function AddProductPage() {
   return (
     <div>
@@ -31,6 +37,7 @@ export default function AddProductPage() {
           type="number"
           className="input-bordered input mb-3 w-full"
         />
+        <button className= "btn btn-primary btn-block" type="submit"> ADD PRODUCT </button>
    
       </form>
     </div>
