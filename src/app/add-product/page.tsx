@@ -1,3 +1,4 @@
+import FormSubmitButton from "@/components/FormSubmitButton";
 import prisma from "@/lib/db/prisma";
 import { redirect } from "next/navigation";
 
@@ -11,6 +12,7 @@ const name = formData.get("name")?.toString ();
 const description = formData.get("description")?.toString ();
 const imageUrl = formData.get("imageUrl")?.toString ();
 const price = Number(formData.get("price")|| 0);
+ 
 
 if(!name || !description || !imageUrl || !price) {
   throw Error("Missing fields");
@@ -60,7 +62,9 @@ export default function AddProductPage() {
           type="number"
           className="input-bordered input mb-3 w-full"
         />
-        <button className= "btn btn-primary btn-block" type="submit"> ADD PRODUCT </button>
+        <FormSubmitButton className= " btn-block" > 
+         ADD PRODUCT 
+         </FormSubmitButton>
    
       </form>
     </div>

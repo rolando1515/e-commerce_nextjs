@@ -1,10 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {};
 
-module.exports = nextConfig
-//  this was giving me an error 
+module.exports = nextConfig;
+//  this was giving me an error
 module.exports = {
-    experimental: {
-      serverActions: true,
-    },
-  };
+  images: {
+    remotePattens: [{ hostname: "images.unsplash.com" }],
+  },
+  experimental: {
+    serverActions: true,
+  },
+};
